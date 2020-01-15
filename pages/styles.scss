@@ -1,0 +1,125 @@
+//** Copyright (C) 2020 Frontier Developments PLC.
+// Mixins
+@import "~/assets/scss/variables";
+@import "~/assets/scss/mixins";
+
+.v-home {
+
+  &__masthead {
+    position: relative;
+    margin-top: -50px;
+
+    &-extras {
+      position: absolute;
+      bottom: $spacing_sm;
+      z-index: $z_low;
+      display: flex;
+      width: 100%;
+    }
+
+    .c-recommendations {
+      display: none;
+    }
+
+    .c-notifications-panel {
+      margin-left: auto;
+      max-width: 90%;
+    }
+
+  }
+
+  // this component needs a little more space to breathe on the homepage
+  /deep/ {
+    .c-content-intro {
+      &__container {
+        padding-top: $spacing_sm * 2;
+        padding-bottom: $spacing_sm * 2;
+      }
+    }
+  }
+
+}
+
+
+// Tablet ++
+.gte-tablet {
+  .v-home {
+
+    &__masthead {
+
+      &-extras {
+        bottom: $spacing_md;
+        justify-content: space-between;
+        align-items: flex-end;
+      }
+
+      .c-recommendations {
+        display: block;
+        width: 50%;
+        max-width: 320px;
+        margin-right: $spacing_md / 2;
+        margin-left: $spacing_md;
+      }
+
+      .c-notifications-panel {
+        max-width: 40%;
+        margin-left : $spacing_md / 2;
+      }
+
+    }
+
+    // this component needs a little more space to breathe on the homepage
+    /deep/ {
+      .c-content-intro {
+        &__container {
+          padding-top: $spacing_md * 2;
+          padding-bottom: $spacing_md * 2;
+        }
+      }
+    }
+
+  }
+}
+
+
+// Desktop ++
+.gte-desktop {
+  .v-home {
+
+    &__masthead {
+      margin-top: -60px;
+
+      &-extras {
+        bottom: $spacing_lg;
+
+        .c-recommendations {
+          max-width: 460px - $spacing_lg;
+          margin-left: $spacing_lg;
+        }
+
+        .c-notifications-panel {
+          max-width: 460px;
+        }
+      }
+    }
+
+    // this component needs a little more space to breathe on the homepage
+    /deep/ {
+      .c-content-intro {
+        &__container {
+          padding-top: $spacing_lg * 2;
+          padding-bottom: $spacing_lg * 2;
+        }
+      }
+    }
+
+  }
+}
+
+
+// Widescreen
+.gte-desktop {
+  .v-home {
+
+  }
+}
