@@ -4,8 +4,8 @@
   </div>
 </template>
 
-<script lang="ts">
-import List from './scripts'
+<script>
+import List from './scripts.js'
 export default List
 </script>
 
